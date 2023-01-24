@@ -27,5 +27,13 @@ bool(None) # False
 bool(0) # False
 bool("",(),[],{}) # False
 
+def function():
+    return True
+print(function()) # True
+if function():
+    print("YES!")
+else:
+    print("NO!")
+    
 x = 200
 print(isinstance(x, int)) # True

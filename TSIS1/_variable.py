@@ -4,8 +4,8 @@ y = "Nursat"
 print(x) # 5
 print(y) # Nursat
 
-x = 4
-x = "Sally"
+x = 4 # x is of type int
+x = "Sally" # x is now of type str
 print(x) # Sally 
 
 
@@ -34,7 +34,9 @@ A = "Nursat"
 myname = "Nurrsat"
 my_name = "Nursat"
 myname2 = "Nursat"
-MYNAME = "Nursat" 
+MYNAME = "Nursat"
+_my_name = "Nursat" 
+myVar = "Nursat"
 
 ''' MUlti words Variable names '''
 # Camel case
@@ -62,7 +64,7 @@ fruits = ["apple", "banana", "cherry"]
 x = y = z = fruits
 print(x) # apple
 print(y) # banana
-print(z) # cherry\
+print(z) # cherry
  
 ''' Unpacking a Tuple '''
 fruits = ("apple", "banana", "cherry")
@@ -80,17 +82,18 @@ print(red) # raspberry
 
 ''' OUTPUT VARIABLE '''
 x = " Python is awesome "
-print(x)
+print(x) # Python is awesome
 x = "Python"
 y = 'is'
 z = "awesome"
 print(x,y,z) # Python is awesome
+print(x + y + z) # Pythonisawesome
 x = 5
 y = 10
 print(x + y) # 15
 x = 5
 y = "Nursat"
-print(x, y)
+print(x, y) # 5Nursat
 
 ''' GLOBAL VARIABLE '''
 x = "awesome"

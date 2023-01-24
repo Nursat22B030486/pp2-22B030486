@@ -14,12 +14,12 @@ if b > a:
 elif a == b:
     print("a and b are equal")
 else:
-    print("a is greater than")
+    print("a is greater than b")
 
 if a > b:
-    print("a is greater than")
+    print("a is greater than b")
 else: 
-    print("b is greater than")
+    print("b is greater than b")
 
 ''' Short Hand if '''
 if a > b: print("a is greater than b")

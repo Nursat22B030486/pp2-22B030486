@@ -1,4 +1,4 @@
-print(10 +5)
+print(10 + 5)
 '''
 Python divides the operators in the following groups:
 

@@ -12,7 +12,7 @@ z = 1j # complex
 
 #To verify the type of any object in Python, use the type() function:
 x = 10
-print(x) # <class 'int'> 
+print(type(x)) # <class 'int'> 
 
 # INT - is whole number, positive or negative, without decimals, of unlimited length
 x = 1
@@ -44,13 +44,15 @@ print(type(x)) # <class 'complex'>
 print(type(y)) # <class 'complex'>
 print(type(z)) # <class 'complex'>
 
-'''  YPE CONVERSION '''
+'''  TYPE CONVERSION '''
 x = 1
 y = 2.8
 z = 1j
-
+#convert from int to float
 a = float(x)
+#convert from float to int
 b = int(y)
+#convert from int to complex
 c = complex(x)
 print(a) # 1.0
 print(b) # 2
