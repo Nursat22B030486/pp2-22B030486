@@ -29,7 +29,9 @@ else:
     print("3")
 
 # 5
-if a == b and c == d:
+c = 10
+d = 5
+if (a == b) and (c == d) :
     print("Hello")
 
 # 6
