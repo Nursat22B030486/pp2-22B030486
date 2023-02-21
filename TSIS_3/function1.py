@@ -15,18 +15,18 @@
 # print(convert(temparature))
 
 # # 3
-def solve(numheads, numlegs):
-    for i in range(numheads):
-        if (numheads-i)*2 + i*4 == numlegs:
-            return i
-    return 0
+# def solve(numheads, numlegs):
+#     for i in range(numheads):
+#         if (numheads-i)*2 + i*4 == numlegs:
+#             return i
+#     return 0
 
-numheads, numlegs  = int(input()), int(input())
-result = solve(numheads, numlegs)
-if result != 0:
-    print(f"We have {result} rabbits and {numheads-result} chicken")
-else:
-    print("NO solution")
+# numheads, numlegs  = int(input()), int(input())
+# result = solve(numheads, numlegs)
+# if result != 0:
+#     print(f"We have {result} rabbits and {numheads-result} chicken")
+# else:
+#     print("NO solution")
 
 
 # # 4
@@ -48,7 +48,7 @@ else:
 
 # 5
 # def all_permutations(words):
-#     for i in range
+#     pass
 # all_permutations("abacaba")
 
 # 6
@@ -66,7 +66,7 @@ else:
 #     return total
    
     
-# words = input()
+# words = "We are ready"
 # print(reverse(words))
 
 # 7
@@ -95,8 +95,8 @@ else:
 # print(spy_game(my_list))
 
 # 9 
-# def volume(n):
-#     return 4/3 * 3.14 * n**3
+def volume(n):
+    return 4/3 * 3.14 * n**3
 
 # radius = int(input()) 
 # print(volume(radius))
@@ -136,6 +136,7 @@ else:
 # import random
 
 # rand_num = random.randint(1, 21)
+# rand_num = random.randrange(1, 21)
 # print(rand_num)
 # def guess_num(count,rand_num):
 #     num = int(input())

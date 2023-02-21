@@ -1,7 +1,7 @@
 # 1
 # class A:
 #     def __init__(self):
-#          self.word = ""
+#         pass
 
 #     def get_string(self):
 #         self.word = input()
@@ -14,26 +14,29 @@
 # words.get_string()
 # words.print_string()
 
-# # 2 and 3
-# class Shape():
-#     def __init__(self, length):
-#         self.length = length
+# 2 and 3
+class Shape():
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
    
-# class Square(Shape):
-#     def area(self):
-#         return self.length**2
+class Square(Shape):
+    
+    def __init__(self, length):
+         self.length = length
+    def area(self):
+        return self.length**2
 
-# class Rectangle(Shape):
-#         def __init__(self, length, width):
-#             self.length = length
-#             self.width = width
-
-#         def area(self):
-#             return self.length * self.width
-# my_wish = Rectangle(5, 8)
-# print(my_wish.area())
-# my_wish2 = Square(8)
-# print(my_wish2.area())
+class Rectangle(Shape):
+        # def __init__(self, length, width):
+        #     super().__init__(sel...)
+      
+        def area(self):
+            return self.length * self.width
+my_wish = Rectangle(5, 8)
+print(my_wish.area())
+my_wish2 = Square(8)
+print(my_wish2.area())
 
 
 # # 4
@@ -74,6 +77,7 @@
 
 #     def deposit(self, depo):
 #         self.balance = self.balance + depo
+#         return f"You give us {depo}"
         
         
 
@@ -90,16 +94,16 @@
 
 
 # 6
-def prime(x):
-    count = 0
-    for i in range(2,int(x)):
-        if (int(x)%i== 0):
-            return False
-    if int(x) == 1:
-        return False
-    return True
+# def prime(x):
+#     count = 0
+#     for i in range(2,int(x)):
+#         if (int(x)%i== 0):
+#             return False
+#     if int(x) == 1:
+#         return False
+#     return True
 
-my_list = list(input())
-new_list = []
-new_list = list(filter(lambda x: prime(x), my_list))
-print(new_list)
+# my_list = list(input())
+# new_list = []
+# new_list = list(filter(lambda x: prime(x), my_list))
+# print(new_list)

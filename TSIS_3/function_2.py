@@ -76,18 +76,18 @@ movies = [
 }
 ]
 # 1
-def above(movies):
-    for i in movies:
-        if i["imdb"] >= 5.5:
-            i["is_above"] = True
-        else:
-            i["is_above"] = False
-    return movies
+# def above(movies):
+#     for i in movies:
+#         if i["imdb"] >= 5.5:
+#             i["is_above"] = True
+#         else:
+#             i["is_above"] = False
+#     return movies
 
 
-for i in above(movies):
-    print(i, "\n")
-print("\nFirst task -> 1\n")
+# for i in above(movies):
+#     print(i, "\n")
+# print("\nFirst task -> 1\n")
 # 2
 def sub_lists(movies):
     sub_list = []
@@ -100,39 +100,39 @@ print("\nSecond task -> 2\n")
 for i in sub_lists(movies):
     print(i, "\n")
 
-# 3
-def filter_category(movies):
-    my_wish = input()
-    new_list = []
-    for i in movies:
-        if i["category"] == my_wish:
-            new_list.append(i)
-    return new_list
+# # 3
+# def filter_category(movies):
+#     my_wish = input()
+#     new_list = []
+#     for i in movies:
+#         if i["category"] == my_wish:
+#             new_list.append(i)
+#     return new_list
 
 
-print("\n Third task -> 3\n")
-for i in filter_category(movies):
-    print(i, "\n")
+# print("\n Third task -> 3\n")
+# for i in filter_category(movies):
+#     print(i, "\n")
 
-# 4
-def average_imdb(movies):
-    total = 0
-    for i in movies:
-        total += i["imdb"]
+# # 4
+# def average_imdb(movies):
+#     total = 0
+#     for i in movies:
+#         total += i["imdb"]
 
-    return total/len(movies)
+#     return total/len(movies)
 
-print("\n Fourth task -> 4")
-print(average_imdb(movies))
+# print("\n Fourth task -> 4")
+# print(average_imdb(movies))
 
 
-# 5
-def cat_ave_imdb(my_list):
-    total = 0
-    for i in my_list:
-        total += i["imdb"]
-    return total/len(my_list)
+# # 5
+# def cat_ave_imdb(my_list):
+#     total = 0
+#     for i in my_list:
+#         total += i["imdb"]
+#     return total/len(my_list)
         
 
-cat_list = filter_category(movies)
-print(cat_ave_imdb(cat_list))
+# cat_list = filter_category(movies)
+# print(cat_ave_imdb(cat_list))

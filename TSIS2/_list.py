@@ -90,6 +90,7 @@ thislist = ["apple", "banana", "cherry"]
 # Loop Through a List
 for x in thislist:
     print(x)  
+[print(x) for x in thislist]
 # Loop Through the Index Numbers
 for i in range(len(thislist)):
     print(thislist[i])
