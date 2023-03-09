@@ -26,4 +26,5 @@ with open('first.txt', 'r')as f:
     print('Before copy:', file_2.read())
     shutil.copy(source, destination)
     print('Arter copy:', file_2.read())
+    file_2.close()
 

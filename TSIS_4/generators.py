@@ -1,6 +1,7 @@
 # 1
 def to_square(n):
-    yield int(n)**2
+    for i in range(n):
+        yield i**2
 
 # my_list = [1, 5, 6, 7]
 for i in to_square(5):
