@@ -1,110 +1,72 @@
-# import pygame
-
-
-# pygame.init()
-
-
-# musics = []
-
-# song_end =  pygame.USEREVENT + 1
-# pygame.mixer.music.set_endevent(song_end)
-
-# musics.append(pygame.mixer.music.load("crash-adams-feat.-king-vvibe-destination-freestyle.mp3"))
-# musics.append(pygame.mixer.music.load("Crash Adams — Give Me A Kiss (Official Lyric Video) (www.lightaudio.ru).mp3"))
-# print(musics)
-
-# def play_next_song():
-#     global musics
-#     musics = musics[1:] + [musics[0]]
-#     pygame.mixer.music.load(musics[0])
-#     pygame.mixer.music.play()
-
-# import random
-
-# currently_playing_song = None
-# def play_a_different_song():
-#     global currently_playing_song, musics
-#     next_song = random.choice(musics)
-#     while next_song == currently_playing_song:
-#         next_song = random.choice(musics)
-#     _currently_playing_song = next_song
-#     pygame.mixer.music.load(next_song)
-#     pygame.mixer.music.play()
-
-
-# WIDTH, HEIGHT = 700, 700
-# screen = pygame.display.set_mode((WIDTH, HEIGHT))
-# clock = pygame.time.Clock()
-# pygame.display.set_caption("Music")
-
-
-
-# working = True
-
-
-# pygame.mixer.music.play()
-# while working:
-#     screen.fill((145, 145, 188))
-
-#     for event in pygame.event.get():
-#         if (event.type is pygame.QUIT) or (event.type is song_end):
-#             print("the song ended!")
-#             working = False
-        
-    
-#     pressed = pygame.key.get_pressed()
-#     if pressed[pygame.K_RIGHT]:
-#         play_a_different_song()
-
-
-#     if pressed[pygame.K_SPACE]:
-#         if pygame.mixer.music.pause():
-#             pygame.mixer.music.unpause()
-#         if pygame.mixer.music.unpause():
-#             pygame.mixer.music.pause()
-
-
-#     clock.tick(60)
-#     pygame.display.flip()
-
-
 import pygame
 
-
+# Initializing
 pygame.init()
+pygame.mixer.init()
 
-
-musics = []
-musics.append("crash-adams-feat.-king-vvibe-destination-freestyle.mp3")
-musics.append("Crash Adams — Give Me A Kiss (Official Lyric Video) (www.lightaudio.ru).mp3")
-
-pygame.mixer.music.load(musics[0])
-musics.pop(0)
-pygame.mixer.music.play()
-
-pygame.mixer.music.load(musics[0])
-musics.pop(0)
-
-
-WIDTH, HEIGHT = 700, 700
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# Clock
 clock = pygame.time.Clock()
 
+musics = ['./music/first.mp3', './music/second.mp3']
+currently_playing_music = 0
+
+# Surface
+screen = pygame.display.set_mode((400, 100))
+pygame.display.set_caption("Music player")
+
+# Starting the music
+music = pygame.mixer.music.load(musics[currently_playing_music])
+pygame.mixer.music.play()
+
+# ICON
+image = pygame.image.load("./images/unnamed.png")
+size_of_icon = pygame.transform.scale(image, (100,80))
+position_of_icon = (10, 10)
 
 
-working = True
-while working:
-    screen.fill((145, 145, 188))
+# Design
+colors = [(128, 128, 128), (255, 255, 255), (255, 224, 32)] # gray, white, yellow
+font = pygame.font.SysFont('Comicsansms', 24)
 
+
+running = True
+while running:
+
+    # Cloth window event
     for event in pygame.event.get():
-        if (event.type is pygame.QUIT):
-            print("the song ended!")
-            working = False
-        
-    if len(musics) > 0:
-        pygame.mixer.music.queue(musics[0])
-        musics.pop(0)
+        if event.type is pygame.QUIT:
+            running = False
+            
 
-    clock.tick(60)
+        # Bottoms 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                if pygame.mixer.music.get_busy():
+                    pygame.mixer.music.pause()
+                else: pygame.mixer.music.unpause()
+            
+            elif event.key == pygame.K_LEFT:
+                currently_playing_music  = (currently_playing_music - 1) % len(musics)
+                pygame.mixer.music.load(musics[currently_playing_music])
+                pygame.mixer.music.play()
+
+            elif event.key == pygame.K_RIGHT:
+                currently_playing_music  = (currently_playing_music + 1) % len(musics)
+                pygame.mixer.music.load(musics[currently_playing_music])
+                pygame.mixer.music.play()
+    
+    # Background color
+    screen.fill(colors[0])
+
+    # Text
+    text = font.render(musics[currently_playing_music],True, colors[2])
+    
+    # Show the text and image 
+    screen.blit(text,(140, 50))
+    screen.blit(size_of_icon, position_of_icon)
+
     pygame.display.flip()
+    clock.tick(30)
+
+pygame.quit()
 

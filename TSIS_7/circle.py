@@ -23,7 +23,7 @@ while working:
         if event.type == pygame.QUIT:
             working = False
 
-    pygame.draw.circle(screen, (255, 0, 0), (x, y), radius=25, width=2)
+    pygame.draw.circle(screen, (255, 0, 0), (x, y), radius=25)
 
     pressed = pygame.key.get_pressed()
     
